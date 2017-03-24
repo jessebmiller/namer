@@ -268,7 +268,7 @@ def namer():
         "damage",
         "day",
         "death",
-        "devise",
+        "device",
         "disease",
         "dog",
         "doll",
@@ -428,7 +428,6 @@ def namer():
         adj = random.choice(source.adjectives)
         nom = random.choice(source.nouns)
     except Exception as e:
-        raise e
         adj = random.choice(adjectives)
         nom = random.choice(nouns)
 
