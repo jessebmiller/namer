@@ -12,6 +12,9 @@ WORKDIR /app
 
 ADD namer-svc.py /app
 ADD wordlists.py /app
+ADD test_wordlist.py /app
+
+RUN python3 -m unittest discover
 
 EXPOSE 8880
 

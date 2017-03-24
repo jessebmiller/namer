@@ -7,6 +7,12 @@ app = Flask(__name__)
 word_sources = {
     "test": wordlists.TestWordlist(),
     "turboencabulator": wordlists.TurboencabulatorWordlist(),
+    "RnJAPublicPlace": wordlists.URLWordlist(
+        "http://www.learnlibrary.com/romeo-juliet/romeo-and-juliet_4.htm",
+    ),
+    "ThisMustBeThePlace": wordlists.URLWordlist(
+        "http://www.metrolyrics.com/this-must-be-the-place-naive-melody-lyrics-talking-heads.html",
+    ),
 }
 
 def namer():

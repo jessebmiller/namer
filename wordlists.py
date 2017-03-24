@@ -43,7 +43,7 @@ class SpacyWordlist(Wordlist):
         if not self.processed:
             self.processed = requests.post(
                 "http://spacy/api",
-                data="""{ "text": "{}"}""".format(self.text)
+                data="""{ "text": "{}"}""".format(self.text),
                 headers={"content-type": "application/json"},
             ).json()
         return self.processed
@@ -57,7 +57,7 @@ class LicenceWordlist(SpacyWordlist):
 
     @property
     def text(self):
-        with open("./LICENCE", "r") a licence:
+        with open("./LICENCE", "r") as licence:
             return licence.read()
 
 # this could get upgraded to https://github.com/buriy/python-readability
@@ -66,7 +66,7 @@ class PageTextParser(HTMLParser):
     text = ""
 
     def handle_data(self, data):
-        self.text += data
+        self.text += " {} ".format(data)
 
 
 class URLWordlist(SpacyWordlist):
